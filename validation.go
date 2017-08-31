@@ -210,3 +210,8 @@ func (s *Set) validate(validator Validator, obj interface{}) *Set {
 	s.isValid = false
 	return s
 }
+
+// make validate exported
+func (s *Set) Validate(validator Validator) *Set {
+	return s.validate(validator, s.Field)
+}
